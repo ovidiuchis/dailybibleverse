@@ -13,7 +13,7 @@ currentYearElement.textContent = new Date().getFullYear();
 // Fetch verses from JSON file
 async function loadVerses() {
   try {
-    const response = await fetch("../content/verses.json");
+    const response = await fetch("./content/verses.json");
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
