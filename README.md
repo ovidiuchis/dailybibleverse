@@ -1,38 +1,41 @@
 # Scriptura Zilnică 🌱
 
-A simple web application that displays random Bible verses for daily inspiration. The application fetches verses from a JSON file and presents them with a clean, minimalist design.
+O aplicație web simplă care afișează versete din Biblie aleatorii pentru inspirație zilnică. Aplicația preia versetele dintr-un fișier JSON și le prezintă într-un design curat și minimalist.
 
-## 🌟 Features
-- Randomly displays a Bible verse with its reference.
-- Smooth fade-in animation for verse transitions.
-- Modern, responsive design using CSS Flexbox and custom properties.
-- Optimized for mobile and desktop.
-- Easy to customize with additional verses in the JSON file.
+## 🚨 Accesează siteul live aici:
 
-## 🛠️ Technologies Used
+[![Live](https://img.shields.io/badge/Vezi_live-uncuvant.ro-brightgreen?style=for-the-badge)](http://uncuvant.ro)
+
+## 🌟 Funcționalități
+- Afișează aleatoriu un verset biblic cu referința sa.
+- Animație de fade-in lină pentru tranzițiile versetelor.
+- Design modern, receptiv, folosind CSS Flexbox și variabile personalizate.
+- Optimizat pentru mobil și desktop.
+- Ușor de personalizat prin adăugarea de versete suplimentare în fișierul JSON.
+
+## 🛠️ Tehnologii Utilizate
 - **HTML5**
-- **CSS3** (with variables for easy theming)
+- **CSS3** (cu variabile pentru o temă ușor de personalizat)
 - **JavaScript (ES6)**
-- JSON (for verse data)
+- JSON (pentru datele versetelor)
 
-## 🚀 Getting Started
+## 🚀 Pași pentru Începere
 
-1. **Clone the repository:**
+1. **Clonează repository-ul:**
 
 ```bash
-git clone [repository-url]
-cd [repository-folder]
+git clone [https://github.com/ovidiuchis/randombibleverse.git]
 ```
 
-2. **Open the project locally:**
+2. **Deschide proiectul local:**
 
-- Open `index.html` in your preferred browser.
+- Deschide `index.html` în browserul tău preferat.
 
-3. **Customize the verses:**
+3. **Personalizează versetele:**
 
-- Modify the `verses.json` file located in the `content` folder to add or update Bible verses.
+- Modifică fișierul `verses.json` aflat în folderul `content` pentru a adăuga sau actualiza versete biblice.
 
-4. **Structure Overview:**
+4. **Structura Fișierelor:**
 
 ```
 📦 project-root
@@ -45,16 +48,16 @@ cd [repository-folder]
 └── index.html
 ```
 
-## 📂 File Descriptions
+## 📂 Descrierea Fișierelor
 
-- **index.html** – The main HTML structure and layout.
-- **assets/styles.css** – Styling for the application, including animations and responsive design.
-- **assets/main.js** – JavaScript file that handles fetching and displaying verses.
-- **content/verses.json** – JSON file containing Bible verses and references.
+- **index.html** – Structura principală HTML și layout-ul aplicației.
+- **assets/styles.css** – Fișierul CSS care include stilurile și animațiile aplicației.
+- **assets/main.js** – Fișierul JavaScript care gestionează preluarea și afișarea versetelor.
+- **content/verses.json** – Fișier JSON care conține versetele biblice și referințele acestora.
 
-## 🎯 Usage
-- Click the "Verset Nou" button to display a new random verse.
-- All verses are fetched from the `verses.json` file.
+## 🎯 Utilizare
+- Apasă pe butonul "Verset Nou" pentru a afișa un verset aleatoriu.
+- Toate versetele sunt preluate din fișierul `verses.json`.
 
-## ✅ Future Enhancements
-- Integrate a light/dark theme toggle.
+## ✅ Îmbunătățiri viitoare
+- Integrarea unui comutator pentru temă deschisă/închisă.
