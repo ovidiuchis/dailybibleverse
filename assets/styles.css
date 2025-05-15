@@ -1,14 +1,23 @@
-/* Base styles */
 :root {
-  --background: hsl(210, 40%, 98%);
-  --foreground: hsl(222.2, 84%, 4.9%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(222.2, 84%, 4.9%);
-  --primary: hsl(221, 83%, 53%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
-  --border: hsl(214.3, 31.8%, 91.4%);
-  --radius: 0.5rem;
+  /* Main colors */
+  --background: #ffffff;
+  --foreground: #333333;
+  --card: #ffffff;
+  --card-foreground: #333333;
+  --primary: #1b4482; /* Deep blue like TGC */
+  --primary-foreground: #ffffff;
+  --secondary: #f2f2f2;
+  --secondary-dark: #e5e5e5;
+  --accent: #c45b28; /* Accent color for highlights */
+  --muted-foreground: #6c757d;
+  --border: #e0e0e0;
+  --radius: 0.25rem;
+
+  /* Fonts */
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-size-base: 1rem;
+  --line-height-base: 1.6;
 }
 
 /* Reset */
@@ -20,61 +29,75 @@
 
 /* Layout */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--background);
   color: var(--foreground);
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  line-height: var(--line-height-base);
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   min-height: 100vh;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Changed from center to flex-start */
-  padding: 2rem 1rem;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 header {
-  margin-bottom: 2rem;
+  width: 100%;
   text-align: center;
+  padding: 2rem 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
 }
 
 h1 {
-  font-family: "Playfair Display", serif;
-  font-weight: 600;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  margin-top: 2rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
   color: var(--muted-foreground);
+  font-size: 1.1rem;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 main {
   width: 100%;
-  max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(8px);
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-width: 850px;
+  background-color: var(--card);
+  border-radius: 0.25rem;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
+  position: relative;
 }
 
 .verse-container {
-  margin-bottom: 2rem;
+  position: relative;
+  margin: 0 auto 1rem;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  max-width: 650px;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--primary);
 }
 
 .verse-container.fade-in {
@@ -83,42 +106,53 @@ main {
 }
 
 .verse-text {
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: 500;
+  text-align: left;
+  color: var(--foreground);
+  text-indent: 2rem;
 }
 
 .verse-reference {
   display: block;
   font-style: normal;
-  font-weight: 500;
-  color: var(--muted-foreground);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent);
+  text-align: right;
 }
 
 .refresh-button {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   background-color: var(--primary);
   color: var(--primary-foreground);
   border: none;
   border-radius: var(--radius);
-  padding: 0.5rem 1rem;
-  font-family: "Inter", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .refresh-button:hover {
-  background-color: hsl(221, 83%, 48%);
+  background-color: #0f3366; /* Slightly darker shade */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .refresh-button svg {
   transition: transform 0.3s ease;
+  width: 18px;
+  height: 18px;
 }
 
 .refresh-button:hover svg {
@@ -127,18 +161,24 @@ main {
 
 footer {
   text-align: center;
+  width: 100%;
   font-size: 0.875rem;
   color: var(--muted-foreground);
+  padding: 1.5rem 0 2rem;
+  margin-top: auto;
+  border-top: 1px solid var(--border);
 }
 
 .footer-link {
   color: var(--primary);
   text-decoration: none;
   transition: color 0.2s ease;
+  font-weight: 500;
+  margin: 0 0.25rem;
 }
 
 .footer-link:hover {
-  color: hsl(221, 83%, 48%);
+  color: var(--accent);
   text-decoration: underline;
 }
 
@@ -152,83 +192,103 @@ footer {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+  background-color: rgba(0, 0, 0, 0.75); /* Black w/ opacity */
 }
 
 .modal-content {
   background-color: var(--card);
   color: var(--card-foreground);
-  font-family: "Inter", sans-serif; /* Apply base font */
-  margin: 10% auto; /* Adjusted margin for better centering on various screen heights */
-  padding: 2rem; /* Consistent padding */
+  font-family: var(--font-sans);
+  margin: 7% auto;
+  padding: 2.5rem;
   border: 1px solid var(--border);
-  border-radius: 1rem; /* Match main content's border-radius */
-  width: 90%; /* More responsive width */
-  max-width: 550px; /* Slightly wider for better text flow */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow for modal */
-  text-align: center;
+  border-radius: 0.25rem;
+  width: 92%;
+  max-width: 650px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   position: relative;
-  /* Add backdrop filter if desired, similar to main, but ensure readability */
-  background-color: rgba(255, 255, 255, 0.85); /* If a slight transparency is needed */
-  backdrop-filter: blur(5px);
+  animation: modalFadeIn 0.3s ease-in-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .modal-close-button {
   color: var(--muted-foreground);
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 20px;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   transition: color 0.2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-close-button:hover,
 .modal-close-button:focus {
-  color: var(--foreground);
+  color: var(--accent);
   text-decoration: none;
-  cursor: pointer;
 }
 
 .modal-title {
-  font-family: "Playfair Display", serif;
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.75rem;
   margin-bottom: 1.5rem;
-  color: var(--foreground);
+  color: var(--primary);
+  text-align: left;
+  border-bottom: 3px solid var(--secondary-dark);
+  padding-bottom: 0.75rem;
 }
 
 .modal-text {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.75rem;
   color: var(--foreground);
-  text-align: justify;
-  text-indent: 2em; /* Add indentation for the first line of paragraph */
+  text-align: left;
+  text-indent: 2rem;
 }
 
 .modal-verse {
-  font-family: "Playfair Display", serif;
-  font-size: 1.1rem;
-  font-style: bold;
-  line-height: 1.6;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.7;
   color: var(--foreground);
-  margin-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  padding-top: 1.5rem;
-  text-indent: 2em; /* Add indentation for the first line of paragraph */
+  margin-top: 2rem;
+  background-color: var(--secondary);
+  padding: 1.5rem;
+  border-left: 4px solid var(--accent);
+  text-align: left;
 }
 
 @media (min-width: 640px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
   main {
-    padding: 3rem;
+    padding: 2rem;
   }
   .verse-text {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
   }
   .modal-title {
     font-size: 1.75rem;
