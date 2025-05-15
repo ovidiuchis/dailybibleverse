@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scriptura Zilnică</title>
-    <meta name="description" content="Versete biblice pentru inspirație zilnică." />
+    <meta name="description" content="Versete biblice pentru orice moment" />
     <meta name="author" content="Scriptura Zilnică" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
     <link rel="stylesheet" href="assets/styles.css" />
     <link rel="icon" type="image/png" href="assets/bible.png" sizes="16x16" />
@@ -19,8 +21,8 @@
   <body>
     <div class="container">
       <header>
-        <h1>Scriptura Zilnică</h1>
-        <p class="subtitle">Suficient pentru azi, puternic pentru veșnicie – Cuvântul lui Dumnezeu.</p>
+        <h1>Un cuvânt din Scriptură</h1>
+        <p class="subtitle">Relevat azi. Valabil veșnic. Cuvântul lui Dumnezeu</p>
       </header>
 
       <main>
@@ -30,7 +32,7 @@
         </div>
         <button id="refresh-btn" class="refresh-button">
           <svg
-            xmlns="https://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
             viewBox="0 0 24 24"
@@ -39,6 +41,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
+            aria-hidden="true"
           >
             <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
             <path d="M3 3v5h5"></path>
@@ -50,9 +53,33 @@
       </main>
 
       <footer>
-        <p>&copy; <span id="current-year"></span> · Scriptura zilnică 🤍 ·</p>
+        <p>
+          © <span id="current-year"></span> · un cuvânt din Scriptură 🤍 ·
+          <a href="#" id="about-project-link" class="footer-link">despre ·</a>
+        </p>
       </footer>
     </div>
+
+    <!-- The Modal -->
+    <div id="about-modal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close-button">&times;</span>
+
+        <p class="modal-title">Scriptura - Cuvântul lui Dumnezeu</p>
+
+        <p class="modal-text">
+          Biblia a fost scrisă de oameni inspirați divin și reprezintă revelația lui Dumnezeu despre Sine către om. Ea este o
+          comoară desăvârșită de învățături divine, avându-L pe Dumnezeu ca autor, mântuirea ca scop și adevărul — fără
+          niciun amestec de eroare — ca substanță. Astfel, toată Scriptura este pe deplin adevărată și demnă de încredere.
+        </p>
+
+        <p class="modal-verse">
+          „Un cuvânt spus la timpul potrivit este ca nişte mere de aur într-un coşuleţ de argint." <br />
+          Proverbe 25:11
+        </p>
+      </div>
+    </div>
+
     <script src="assets/main.js"></script>
   </body>
 </html>

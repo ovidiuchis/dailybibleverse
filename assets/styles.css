@@ -1,3 +1,4 @@
+/* Base styles */
 :root {
   --background: hsl(210, 40%, 98%);
   --foreground: hsl(222.2, 84%, 4.9%);
@@ -10,12 +11,14 @@
   --radius: 0.5rem;
 }
 
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Layout */
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--background);
@@ -39,7 +42,7 @@ body {
 }
 
 header {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -48,6 +51,7 @@ h1 {
   font-weight: 600;
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  margin-top: 2rem;
 }
 
 .subtitle {
@@ -127,6 +131,95 @@ footer {
   color: var(--muted-foreground);
 }
 
+.footer-link {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: hsl(221, 83%, 48%);
+  text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  font-family: "Inter", sans-serif; /* Apply base font */
+  margin: 10% auto; /* Adjusted margin for better centering on various screen heights */
+  padding: 2rem; /* Consistent padding */
+  border: 1px solid var(--border);
+  border-radius: 1rem; /* Match main content's border-radius */
+  width: 90%; /* More responsive width */
+  max-width: 550px; /* Slightly wider for better text flow */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow for modal */
+  text-align: center;
+  position: relative;
+  /* Add backdrop filter if desired, similar to main, but ensure readability */
+  background-color: rgba(255, 255, 255, 0.85); /* If a slight transparency is needed */
+  backdrop-filter: blur(5px);
+}
+
+.modal-close-button {
+  color: var(--muted-foreground);
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  color: var(--foreground);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+}
+
+.modal-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+  text-align: justify;
+  text-indent: 2em; /* Add indentation for the first line of paragraph */
+}
+
+.modal-verse {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-style: bold;
+  line-height: 1.6;
+  color: var(--foreground);
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  text-indent: 2em; /* Add indentation for the first line of paragraph */
+}
+
 @media (min-width: 640px) {
   h1 {
     font-size: 2.5rem;
@@ -136,5 +229,14 @@ footer {
   }
   .verse-text {
     font-size: 1.75rem;
+  }
+  .modal-title {
+    font-size: 1.75rem;
+  }
+  .modal-text {
+    font-size: 1.1rem;
+  }
+  .modal-verse {
+    font-size: 1.25rem;
   }
 }
