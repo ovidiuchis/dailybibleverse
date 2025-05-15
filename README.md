@@ -1,4 +1,4 @@
-# Scriptura Zilnică 🌱
+# Un cuvânt din Biblie 🌱
 
 O aplicație web simplă care afișează versete din Biblie aleatorii pentru inspirație zilnică. Aplicația preia versetele dintr-un fișier JSON și le prezintă într-un design curat și minimalist.
 
