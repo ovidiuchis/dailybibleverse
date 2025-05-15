@@ -1,4 +1,4 @@
-# Scriptura Zilnică 🌱
+# Un cuvânt din Biblie 🌱
 
 O aplicație web simplă care afișează versete din Biblie aleatorii pentru inspirație zilnică. Aplicația preia versetele dintr-un fișier JSON și le prezintă într-un design curat și minimalist.
 
@@ -24,7 +24,7 @@ O aplicație web simplă care afișează versete din Biblie aleatorii pentru ins
 1. **Clonează repository-ul:**
 
 ```bash
-git clone [https://github.com/ovidiuchis/randombibleverse.git]
+git clone [https://github.com/ovidiuchis/uncuvant.git]
 ```
 
 2. **Deschide proiectul local:**
