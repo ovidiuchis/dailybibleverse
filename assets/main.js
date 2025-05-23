@@ -4,9 +4,6 @@ const verseReferenceElement = document.getElementById("verse-reference");
 const refreshButton = document.getElementById("refresh-btn");
 const verseContainer = document.querySelector(".verse-container");
 const currentYearElement = document.getElementById("current-year");
-const modal = document.getElementById("about-modal");
-const aboutProjectLink = document.getElementById("about-project-link");
-const modalCloseButton = document.querySelector(".modal-close-button");
 
 // App state
 let versesData = [];
@@ -69,34 +66,6 @@ function displayVerse() {
     // Trigger animation
     verseContainer.classList.add("fade-in");
   }, 300);
-}
-
-// Setup modal functionality
-function setupModalListeners() {
-  if (aboutProjectLink && modal && modalCloseButton) {
-    aboutProjectLink.addEventListener("click", event => {
-      event.preventDefault();
-      modal.style.display = "block";
-    });
-
-    modalCloseButton.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-
-    // Close modal if user clicks outside of the modal content
-    window.addEventListener("click", event => {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-
-    // Allow closing with Escape key
-    window.addEventListener("keydown", event => {
-      if (event.key === "Escape" && modal.style.display === "block") {
-        modal.style.display = "none";
-      }
-    });
-  }
 }
 
 // Initialize the app when DOM is fully loaded

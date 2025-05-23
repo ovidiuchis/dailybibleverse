@@ -51,6 +51,7 @@ body {
   justify-content: flex-start;
   padding: 0;
   box-sizing: border-box;
+  scroll-margin-top: 50px;
 }
 
 header {
@@ -58,7 +59,6 @@ header {
   text-align: center;
   padding: 1.5rem 0 1.5rem;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 0.5rem;
 }
 
 h1 {
@@ -843,5 +843,78 @@ input:checked + .slider:before {
 @media (min-width: 1400px) {
   .resource-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* Tab Navigation Styles */
+.tab-nav {
+  width: 100%;
+  background-color: var(--secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tab-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tab-nav li {
+  flex: 1;
+  max-width: 200px;
+  text-align: center;
+}
+
+.tab-nav .tab-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  font-size: 1.1rem;
+}
+
+.tab-nav .tab-link:hover {
+  background-color: var(--secondary-dark);
+  color: var(--accent);
+}
+
+.tab-nav .tab-link.active {
+  border-bottom: 3px solid var(--accent);
+  color: var(--accent);
+}
+
+.tab-content {
+  display: none;
+  padding: 1rem 0;
+  animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .tab-nav .tab-link {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.95rem;
   }
 }
