@@ -58,7 +58,7 @@ header {
   text-align: center;
   padding: 1.5rem 0 1.5rem;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 h1 {
@@ -85,7 +85,6 @@ main {
   padding: 1.75rem 1.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   text-align: center;
-  margin-bottom: 2.5rem;
   position: relative;
 }
 
@@ -321,7 +320,7 @@ footer {
 }
 
 .resource-section {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   animation-fill-mode: both;
   position: relative;
 }
@@ -331,7 +330,7 @@ footer {
   font-family: var(--font-serif);
   font-size: 1.75rem;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid #e0e0e0;
   color: var(--primary);
@@ -362,8 +361,8 @@ footer {
 }
 
 .section-description {
-  max-width: 800px;
-  margin-bottom: 2rem;
+  align-items: center;
+  margin-bottom: 1rem;
   color: var(--muted-foreground);
   font-size: 1.05rem;
   line-height: 1.7;
@@ -556,7 +555,7 @@ footer {
 
 .study-content {
   max-width: 850px;
-  margin: 2.5rem auto;
+  margin: 1rem auto;
   padding: 0 1rem;
 }
 
@@ -616,7 +615,6 @@ footer {
 /* Content styles */
 .content-card {
   padding: 0 0 1.5rem 0;
-  margin-bottom: 2rem;
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
@@ -764,7 +762,7 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 1rem 0 2rem;
+  padding: 1rem 0 1rem;
   text-align: center;
 }
 
