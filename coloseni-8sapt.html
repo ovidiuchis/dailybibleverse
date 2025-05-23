@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8 Săptămâni prin Coloseni | UnCuvânt.ro</title>
+    <meta name="description" content="Ghid de studiu prin Epistola către Coloseni, pentru întâlniri unu-la-unu" />
+    <meta name="author" content="Un cuvânt din Scriptură" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="icon" type="image/png" href="assets/bible.png" sizes="16x16" />
+    <meta name="theme-color" content="#1b4482" />
+  </head>
+  <body>
+    <header class="feature-header">
+      <div class="header-container">
+        <h1>8 Săptămâni prin Coloseni</h1>
+        <p class="subtitle">ghid de discuție pentru întâlniri unu-la-unu</p>
+      </div>
+    </header>
+
+    <div class="content-container">
+      <main class="study-content">
+        <div class="selector-card">
+          <div class="selector-container">
+            <label for="week" class="selector-label">Alege săptămâna:</label>
+            <select id="week" class="custom-select">
+              <option value="1">unu</option>
+              <option value="2">doi</option>
+              <option value="3">trei</option>
+              <option value="4">patru</option>
+              <option value="5">cinci</option>
+              <option value="6">șase</option>
+              <option value="7">șapte</option>
+              <option value="8">opt</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h2 id="week-title" class="section-title">Săptămâna 1</h2>
+          <ul id="questions" class="question-list">
+            <!-- Întrebările vor fi încărcate dinamic aici -->
+          </ul>
+        </div>
+      </main>
+      <div class="navigation-links">
+        <a href="index.html" class="btn btn-outline"> <span class="arrow-icon left">←</span> Înapoi la resurse </a>
+      </div>
+      <footer>
+        <p>
+          © <span id="current-year"></span> · extras din resurse ale
+          <a href="https://localchurchstpete.com/" target="_blank" class="footer-link"> Local church St. Pete</a>·
+        </p>
+        <div class="mode-toggle-wrapper">
+          <div class="mode-toggle-container">
+            <label for="mode-toggle" class="toggle-label">Versiunea pentru copii</label>
+            <label class="switch">
+              <input type="checkbox" id="mode-toggle" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/assets/bible-study.js"></script>
+    <script>
+      // Set current year in footer
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+
+      // Initialize with specific settings for Coloseni
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.initBibleStudy) {
+          window.initBibleStudy({
+            book: "Coloseni",
+            jsonFile: "/content/coloseni_intrebari.json",
+            kidsJsonFile: null // No kids version for Coloseni
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -16,6 +16,7 @@
   /* Fonts */
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
+  --font-monospace: "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
   --font-size-base: 1rem;
   --line-height-base: 1.6;
 }
@@ -41,21 +42,21 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   min-height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 1rem;
+  padding: 0;
   box-sizing: border-box;
 }
 
 header {
   width: 100%;
   text-align: center;
-  padding: 2rem 0 1.5rem;
+  padding: 1.5rem 0 1.5rem;
   border-bottom: 1px solid var(--border);
   margin-bottom: 2rem;
 }
@@ -182,103 +183,49 @@ footer {
   text-decoration: underline;
 }
 
-/* Modal Styles */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1000; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.75); /* Black w/ opacity */
-}
-
-.modal-content {
-  background-color: var(--card);
-  color: var(--card-foreground);
-  font-family: var(--font-sans);
-  margin: 7% auto;
-  padding: 2.5rem;
-  border: 1px solid var(--border);
-  border-radius: 0.25rem;
-  width: 92%;
-  max-width: 650px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  position: relative;
-  animation: modalFadeIn 0.3s ease-in-out;
-}
-
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+@media (max-width: 480px) {
+  .resource-header {
+    padding: 2.5rem 0.75rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .resource-header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  .resource-header .subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    max-width: 95%;
+  }
+
+  .verse-main {
+    padding: 1.25rem 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .verse-text {
+    font-size: 1.3rem;
+    text-indent: 1rem;
   }
 }
 
-.modal-close-button {
-  color: var(--muted-foreground);
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  transition: color 0.2s ease;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@media (min-width: 481px) and (max-width: 639px) {
+  .resource-header {
+    padding: 1.75rem 1.25rem;
+  }
 
-.modal-close-button:hover,
-.modal-close-button:focus {
-  color: var(--accent);
-  text-decoration: none;
-}
+  .resource-header h1 {
+    font-size: 2rem;
+  }
 
-.modal-title {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 1.75rem;
-  margin-bottom: 1.5rem;
-  color: var(--primary);
-  text-align: center;
-  border-bottom: 3px solid var(--secondary-dark);
-  padding-bottom: 0.75rem;
-}
+  .verse-main {
+    padding: 1.5rem 1.25rem;
+  }
 
-.modal-text {
-  font-family: var(--font-sans);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 1.75rem;
-  color: var(--foreground);
-  text-align: left;
-  text-indent: 2rem;
-}
-
-.modal-verse {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-style: italic;
-  line-height: 1.7;
-  color: var(--foreground);
-  margin-top: 2rem;
-  background-color: var(--secondary);
-  padding: 1.5rem;
-  border-left: 4px solid var(--accent);
-  text-align: left;
-  text-indent: 2rem;
+  .verse-text {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 640px) {
@@ -291,13 +238,613 @@ footer {
   .verse-text {
     font-size: 1.65rem;
   }
-  .modal-title {
-    font-size: 1.75rem;
+}
+
+/* Resource Page Styles */
+.resource-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)),
+    url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=2070") center/cover;
+  color: #ffffff;
+  animation: fadeIn 1s ease;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-bottom: none;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+.resource-header h1,
+.feature-header h1 {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: fadeInDown 1s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  word-wrap: break-word;
+  margin-bottom: 0.5rem;
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  .modal-text {
-    font-size: 1.1rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .modal-verse {
-    font-size: 1.25rem;
+}
+
+.resource-header .subtitle,
+.feature-header .subtitle {
+  color: #ffffff;
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 1s ease;
+  letter-spacing: 1px;
+  opacity: 0.95;
+  font-size: 1rem;
+  margin: 0.5rem auto 0;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resource-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.resource-section {
+  margin-bottom: 4rem;
+  animation-fill-mode: both;
+  position: relative;
+}
+
+.section-title {
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: var(--accent);
+}
+
+/* Specific styling for the week title */
+#week-title {
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.section-description {
+  max-width: 800px;
+  margin-bottom: 2rem;
+  color: var(--muted-foreground);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+.resource-entry {
+  display: block;
+  padding: 1.4rem;
+  text-decoration: none;
+  color: var(--foreground);
+  background-color: var(--card);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.resource-entry::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(27, 68, 130, 0.025), rgba(196, 91, 40, 0.025));
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.resource-entry::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(to bottom, var(--primary), var(--accent));
+  transition: height 0.3s ease;
+}
+
+.resource-entry:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.resource-entry:hover::before {
+  transform: scaleX(1);
+}
+
+.resource-entry:hover::after {
+  height: 100%;
+}
+
+.resource-tag {
+  display: inline-block;
+  background-color: rgba(27, 68, 130, 0.1);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-monospace);
+}
+
+.resource-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: var(--primary);
+  line-height: 1.3;
+}
+
+.resource-description {
+  color: var(--muted-foreground);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.resource-entry:hover .read-more {
+  color: var(--accent);
+}
+
+.resource-entry:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.navigation-links {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  margin: 0.5rem;
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+/* Page specific styles */
+.resources-main {
+  padding: 3rem 0;
+  background-color: #fcfcfc;
+  min-height: 60vh;
+}
+
+.verse-main {
+  width: 100%;
+  max-width: 850px;
+  background-color: var(--card);
+  border-radius: 0.25rem;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  margin: 2rem auto 2.5rem;
+  position: relative;
+}
+
+/* Feature page styles - for study guides & interactive features */
+.feature-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)),
+    url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=2070") center/cover;
+  color: #ffffff;
+  animation: fadeIn 1s ease;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-bottom: none;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+.study-content {
+  max-width: 850px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+/* Selector styles - for any dropdown selector in study guides */
+.selector-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 0 1.5rem;
+  margin-bottom: 1rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid var(--secondary-dark);
+}
+
+.selector-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.selector-label {
+  font-weight: 600;
+  font-size: 2.2 rem;
+  color: var(--primary);
+  margin-right: 0.5rem;
+}
+
+.custom-select {
+  padding: 0.6rem 1.5rem 0.6rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%231b4482%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+}
+
+.custom-select:hover,
+.custom-select:focus {
+  background-color: var(--secondary-dark);
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* Content styles */
+.content-card {
+  padding: 0 0 1.5rem 0;
+  margin-bottom: 2rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Question list styles */
+.question-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.question-list li {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 1.25rem 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+  position: relative;
+  list-style: none;
+  /* Remove marker for all browsers */
+  list-style-type: none;
+}
+
+.question-list li:last-child {
+  margin-bottom: 0.5rem; /* Add a small margin to the last question */
+}
+
+.question-list li:hover {
+  box-shadow: 0 4px 16px rgba(27, 68, 130, 0.1);
+  border-color: var(--primary);
+}
+
+/* Toggle switch styles */
+.mode-toggle-wrapper {
+  background: var(--secondary);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  display: inline-block;
+}
+
+.mode-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-direction: row;
+  white-space: nowrap;
+}
+
+.toggle-label {
+  font-size: 0.95rem;
+  color: var(--foreground);
+  font-weight: 500;
+  margin: 0;
+  display: inline-block;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--secondary);
+  border: 1px solid var(--border);
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 2px;
+  background-color: var(--primary);
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #f3cc5c;
+  border-color: #f3cc5c;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+  background-color: #c45b28;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Kids mode styles */
+/* In kids mode, content card already has no background */
+
+.kids-mode .question-list li {
+  background: #fcf8e3;
+  border: 2px dashed #f3cc5c;
+  font-size: 1.1rem;
+}
+
+.kids-mode .section-title {
+  color: #b86800;
+}
+
+.kids-mode #text-reference {
+  color: #b86800;
+}
+
+/* Footer for content pages */
+.content-container footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0 2rem;
+  text-align: center;
+}
+
+.content-container footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* Bible reference link styles */
+#text-reference {
+  color: var(--primary);
+  text-decoration: none;
+  font-style: italic;
+  transition: all 0.3s ease;
+  border-bottom: 1px dashed transparent;
+  font-size: 1.3rem;
+  margin-left: 0.75rem;
+}
+
+#text-reference:hover {
+  color: var(--accent);
+  border-bottom: 1px dashed var(--accent);
+}
+
+/* Responsive styles for study pages */
+@media (max-width: 480px) {
+  .selector-card {
+    padding: 0.75rem 0;
+  }
+
+  .selector-label {
+    font-size: 0.9rem;
+  }
+
+  .content-card {
+    padding: 0.75rem 0;
+  }
+
+  .question-list li {
+    padding: 1rem 0.75rem;
+  }
+
+  .mode-toggle-wrapper {
+    padding: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .toggle-label {
+    font-size: 0.85rem;
+  }
+
+  .switch {
+    width: 42px;
+    height: 20px;
+  }
+
+  .slider:before {
+    height: 14px;
+    width: 14px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .resource-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .resource-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 1400px) {
+  .resource-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }

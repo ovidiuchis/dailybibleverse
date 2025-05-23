@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Un cuvânt din Scriptură</title>
-    <meta name="description" content="Un cuvânt din Scriptură" />
+    <meta name="description" content="Resurse pentru citirea și studiul Scripturilor" />
     <meta name="author" content="Un cuvânt din Scriptură" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
@@ -20,68 +20,110 @@
     <meta name="theme-color" content="#1b4482" />
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1>Un cuvânt din Scriptură</h1>
-        <p class="subtitle">Relevant azi. Valabil veșnic. Cuvântul lui Dumnezeu</p>
-      </header>
+    <header class="resource-header">
+      <div>
+        <h1>UnCuvânt.ro</h1>
+        <p class="subtitle">Cuvântul relevant azi, vital pentru viitor</p>
+        <a href="azi.html" class="btn" style="margin-top: 1.5rem"> Cuvântul zilei </a>
+      </div>
+    </header>
 
-      <main>
-        <div class="verse-container">
-          <blockquote id="verse-text" class="verse-text"></blockquote>
-          <cite id="verse-reference" class="verse-reference"></cite>
+    <div class="container">
+      <main class="resources-main">
+        <div class="resource-container">
+          <section class="resource-section">
+            <h2 class="section-title">Recomandări</h2>
+            <p class="section-description">
+              Resurse care te vor ajuta să crești în cunoașterea Cuvântului lui Dumnezeu și să-ți dezvolți relația personală
+              cu Domnul Isus Hristos.
+            </p>
+            <div class="resource-grid">
+              <a href="/marcu-8sapt.html" class="resource-entry">
+                <span class="resource-tag">Ucenicie</span>
+                <h3 class="resource-title">Ghid Marcu</h3>
+                <p class="resource-description">
+                  Explorează Evanghelia după Marcu împreună cu cineva și descoperă-L pe Isus așa cum este prezentat în
+                  această Evanghelie.
+                </p>
+                <span class="read-more">Descoperă</span>
+              </a>
+              <a href="/coloseni-8sapt.html" class="resource-entry">
+                <span class="resource-tag">Ucenicie</span>
+                <h3 class="resource-title">Ghid Coloseni</h3>
+                <p class="resource-description">
+                  Explorează Epistola către Coloseni împreună cu cineva și descoperă-L pe Isus - suprem, suficient și prezent
+                  în toate lucrurile.
+                </p>
+                <span class="read-more">Descoperă </span>
+              </a>
+              <a href="azi.html" class="resource-entry">
+                <span class="resource-tag">Meditație</span>
+                <h3 class="resource-title">Un Cuvânt</h3>
+                <p class="resource-description">
+                  Citește Cuvântul lui Dumnezeu în fiecare zi. Un verset zilnic pentru meditație și încurajare spirituală.
+                </p>
+                <span class="read-more">Citește acum</span>
+              </a>
+
+              <a href="https://www.youversion.com/the-bible-app/" class="resource-entry" target="_blank">
+                <span class="resource-tag">Aplicație</span>
+                <h3 class="resource-title">YouVersion</h3>
+                <p class="resource-description">
+                  Aplicație gratuită pentru citirea Bibliei, planuri de citire și studiu zilnic, disponibilă în limba română.
+                </p>
+                <span class="read-more">Instalează </span>
+              </a>
+            </div>
+          </section>
+
+          <section class="resource-section">
+            <h2 class="section-title">Resurse utile</h2>
+            <p class="section-description">Resurse pentru aprofundarea Bibliei și creșterea în cunoașterea lui Dumnezeu.</p>
+            <div class="resource-grid">
+              <a href="https://www.magnagratia.org/" class="resource-entry" target="_blank">
+                <span class="resource-tag">Carti</span>
+                <h3 class="resource-title">Magna Gratia</h3>
+                <p class="resource-description">
+                  Sute de cărți creștine în format digital, resurse pentru studiu biblic și teologie, disponibile GRATUIT.
+                </p>
+                <span class="read-more">Descoperă </span>
+              </a>
+              <a href="https://www.desiringgod.org/" class="resource-entry" target="_blank">
+                <span class="resource-tag">Resurse</span>
+                <h3 class="resource-title">Desiring God</h3>
+                <p class="resource-description">
+                  Resurse creștine, predici și articole despre viața creștină și teologie, de la John Piper și echipa sa.
+                </p>
+                <span class="read-more">Vizitează </span>
+              </a>
+
+              <a href="https://www.thegospelcoalition.org/" class="resource-entry" target="_blank">
+                <span class="resource-tag">Resurse</span>
+                <h3 class="resource-title">The Gospel Coalition</h3>
+                <p class="resource-description">
+                  Articole, resurse și predici centrate pe Evanghelie, pentru aplicarea Scripturii în toate domeniile vieții.
+                </p>
+                <span class="read-more">Vizitează </span>
+              </a>
+            </div>
+          </section>
+          <div class="navigation-links">
+            <a href="contact.html" class="btn">Contact</a>
+            <a href="despre.html" class="btn btn-outline">Despre proiect</a>
+          </div>
         </div>
-        <button id="refresh-btn" class="refresh-button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
-            <path d="M3 3v5h5"></path>
-            <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
-            <path d="M21 21v-5h-5"></path>
-          </svg>
-          Verset Nou
-        </button>
       </main>
 
       <footer>
-        <p>
-          © <span id="current-year"></span> · un cuvânt din Scriptură 🤍 ·
-          <a href="#" id="about-project-link" class="footer-link">despre ·</a>
-        </p>
+        <p>© <span id="current-year"></span> · Un cuvânt din Scriptură 🤍 ·</p>
       </footer>
     </div>
 
-    <!-- The Modal -->
-    <div id="about-modal" class="modal">
-      <div class="modal-content">
-        <span class="modal-close-button">&times;</span>
+    <script>
+      // Set up the current year in footer
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
 
-        <p class="modal-title">Scriptura - Cuvântul lui Dumnezeu</p>
-
-        <p class="modal-text">
-          Biblia a fost scrisă de oameni inspirați divin și reprezintă revelația lui Dumnezeu despre Sine către om. Ea este o
-          comoară desăvârșită de învățături divine, avându-L pe Dumnezeu ca autor, mântuirea ca scop și adevărul — fără
-          niciun amestec de eroare — ca substanță. Astfel, toată Scriptura este pe deplin adevărată și demnă de încredere.
-        </p>
-
-        <p class="modal-verse">
-          „Cuvântul Tău este o candelă pentru picioarele mele și o lumină pe cărarea mea." <br />
-          <cite class="verse-reference">Psalmul 119:105</cite>
-        </p>
-      </div>
-    </div>
-
-    <script src="assets/main.js"></script>
     <!-- Cloudflare Web Analytics -->
     <script
       defer
