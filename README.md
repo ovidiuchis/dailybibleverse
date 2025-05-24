@@ -1,63 +1,75 @@
-# Un cuvânt din Biblie 🌱
+# 🌱 Un Cuvânt din Biblie
 
-O aplicație web simplă care afișează versete din Biblie aleatorii pentru inspirație zilnică. Aplicația preia versetele dintr-un fișier JSON și le prezintă într-un design curat și minimalist.
+**UnCuvant.ro** este un portal web creștin care ajută utilizatorii să se conecteze zilnic cu Cuvântul lui Dumnezeu. Pe lângă afișarea unui verset biblic aleatoriu, site-ul oferă și resurse pentru ucenicie și studiu biblic în profunzime.
 
-## 🚨 Accesează siteul live aici:
+[![Live](https://img.shields.io/badge/Vezi_live-uncuvant.ro-brightgreen?style=for-the-badge)](https://uncuvant.ro)
 
-[![Live](https://img.shields.io/badge/Vezi_live-uncuvant.ro-brightgreen?style=for-the-badge)](http://uncuvant.ro)
+---
 
-## 🌟 Funcționalități
-- Afișează aleatoriu un verset biblic cu referința sa.
-- Animație de fade-in lină pentru tranzițiile versetelor.
-- Design modern, receptiv, folosind CSS Flexbox și variabile personalizate.
-- Optimizat pentru mobil și desktop.
-- Ușor de personalizat prin adăugarea de versete suplimentare în fișierul JSON.
+## ✨ Ce oferă proiectul
 
-## 🛠️ Tehnologii Utilizate
-- **HTML5**
-- **CSS3** (cu variabile pentru o temă ușor de personalizat)
-- **JavaScript (ES6)**
-- JSON (pentru datele versetelor)
+- 📖 **Versetul zilei** – Un verset biblic aleator pentru meditație zilnică.
+- 🧍‍♂️🧍‍♀️ **Ghiduri de ucenicie** – Materiale pentru a citi Biblia 1 la 1 (Ev. după Marcu, Ep. către Coloseni).
+- 🔗 **Resurse externe recomandate** – Linkuri către aplicații și site-uri teologice utile (YouVersion, Desiring God etc.).
+- 📱 **Design modern și responsive** – Se adaptează perfect la mobil, tabletă și desktop.
 
-## 🚀 Pași pentru Începere
+---
 
-1. **Clonează repository-ul:**
+## 🛠️ Tehnologii utilizate
 
-```bash
-git clone [https://github.com/ovidiuchis/uncuvant.git]
-```
+- HTML5
+- CSS3 (cu variabile pentru temare rapidă)
+- JavaScript (ES6)
+- JSON (versete)
+- GitHub Pages (pentru hosting static)
 
-2. **Deschide proiectul local:**
+---
 
-- Deschide `index.html` în browserul tău preferat.
-
-3. **Personalizează versetele:**
-
-- Modifică fișierul `verses.json` aflat în folderul `content` pentru a adăuga sau actualiza versete biblice.
-
-4. **Structura Fișierelor:**
+## 📂 Structura proiectului
 
 ```
 📦 project-root
-├── 📂 assets
-│   ├── main.js
-│   ├── styles.css
-│   └── bible.png
-├── content
+├── index.html
+├── content/
 │   └── verses.json
-└── index.html
+├── assets/
+│   ├── styles.css
+│   ├── main.js
+│   └── bible.png
+├── marcu-8sapt.html
+├── coloseni-8sapt.html
+└── azi.html
 ```
 
-## 📂 Descrierea Fișierelor
+---
 
-- **index.html** – Structura principală HTML și layout-ul aplicației.
-- **assets/styles.css** – Fișierul CSS care include stilurile și animațiile aplicației.
-- **assets/main.js** – Fișierul JavaScript care gestionează preluarea și afișarea versetelor.
-- **content/verses.json** – Fișier JSON care conține versetele biblice și referințele acestora.
+## 🚀 Pornire locală
 
-## 🎯 Utilizare
-- Apasă pe butonul "Verset Nou" pentru a afișa un verset aleatoriu.
-- Toate versetele sunt preluate din fișierul `verses.json`.
+1. Clonează proiectul:
+   ```bash
+   git clone https://github.com/ovidiuchis/uncuvant.git
+   ```
 
-## ✅ Îmbunătățiri viitoare
-- Integrarea unui comutator pentru temă deschisă/închisă.
+2. Deschide fișierul `index.html` într-un browser.
+
+3. Poți modifica conținutul spiritual (ex: `verses.json`, ghidurile PDF) pentru a adapta proiectul la contextul tău.
+
+---
+
+## 🤝 Contribuie
+
+Acest proiect este open-source. Dacă dorești să contribui:
+- Raportează erori sau idei: [Issues](https://github.com/ovidiuchis/uncuvant/issues)
+- Trimite un pull request
+- Distribuie site-ul în comunitatea ta
+
+---
+
+## 🙏 Misiunea proiectului
+
+> „Un cuvânt spus la timpul potrivit este ca niște mere de aur într-un coșuleț de argint.”  
+> — Proverbe 25:11
+
+Scopul acestui proiect este să aducă Adevărul lui Dumnezeu într-un mod accesibil, zilnic, prietenos. Te invităm să-L descoperi pe Hristos prin Cuvânt și să ajuți și alți oameni să-L cunoască.
+
+---
