@@ -1,3 +1,9 @@
+## ☕ Susține
+
+Dacă munca mea te încurajează sau îți este de ajutor, mă poți susține aici 👇
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/ochis)
+
 # 🌱 Un Cuvânt din Biblie
 
 **UnCuvant.ro** este un portal web creștin care ajută utilizatorii să se conecteze zilnic cu Cuvântul lui Dumnezeu. Pe lângă afișarea unui verset biblic aleatoriu, site-ul oferă și resurse pentru ucenicie și studiu biblic în profunzime.
